@@ -1,0 +1,24 @@
+body {
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container {
+  background-color: pink;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 400px;
+  align-items: center;
+}
+
+p {
+    font-size: 20px;
+}
+
+button{
+    margin-top: 10px;
+    width: 150px;
+    /* justify-self: center;
+    display: inline-block; */
+}
