@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  /* background-color: black; */
+}
+
+.cajero {
+  width: 500px;
+  height: 410px;
+  background-color: #666666;
+  position: relative;
+  margin: 100px auto;
+  padding: 20px;
+}
+.container {
+  position: absolute;
+  width: 460px;
+  height: 389px;
+  background-color: #999999;
+  perspective: 1024px;
+  display: flex;
+  justify-content: center;
+}
+
+.titulo {
+  background-color: #00003b;
+  color: beige;
+  text-align: center;
+  border-radius: 3px;
+  width: 461px;
+  height: 45px;
+  padding: 2px 10px;
+}
+
+h1 {
+  background-color: #00003b;
+  border: beige 1px solid;
+  border-radius: 3px;
+  margin: 0;
+}
+
+.pantalla {
+  position: absolute;
+  background-color: #cccccc;
+  width: 400px;
+  height: 190px;
+  transform-style: preserve-3d;
+  transform: rotateX(19deg);
+  top: 56px;
+  perspective: 700px;
+}
+
+.pantalla::before {
+  content: "";
+  position: absolute;
+  background-color: #666666;
+  width: 400px;
+  height: 20px;
+  top: -20px;
+  transform: rotateX(-55deg);
+  transform-origin: bottom;
+}
+
+.pantalla::after {
+  content: "";
+  position: absolute;
+  background-color: beige;
+  color: beige;
+  width: 15px;
+  height: 17px;
+  margin: 2px;
+  top: 25%;
+  box-shadow: 0px 40px, 0px 80px;
+}
+
+.teclado {
+  position: absolute;
+  background-color: #cccccc;
+  width: 435px;
+  height: 160px;
+  transform-style: preserve-3d;
+  transform: rotateX(37deg);
+  top: 60%;
+}
+
+.visor {
+  position: absolute;
+  background-color: #002c92;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 20px solid black;
+  color: #ebebeb;
+  align-items: center;
+  font-size: 15px;
+}
+
+p{
+    text-align: center;
+}
+
+.visor::after {
+  content: "";
+  position: absolute;
+  background-color: beige;
+  color: beige;
+  width: 15px;
+  height: 17px;
+  margin: 2px;
+  top: 18%;
+  right: -20px;
+  box-shadow: 0px 40px, 0px 80px;
+}
+
+.numeros {
+  width: 50%;
+  height: 100%;
+  background-color: #ebebeb;
+  padding: 5px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #ebebeb;
+}
+
+.grid div {
+  width: 45px;
+  height: 33px;
+  background-color: #a3a3a3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+}
+
+.rojo {
+  background-color: red !important;
+  font-size: 11px;
+}
+
+.amarillo {
+  background-color: yellow !important;
+  font-size: 11px;
+}
+.verde {
+  background-color: green !important;
+  font-size: 11px;
+}
+
+.usuario {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit;
+  flex-direction: column; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: start;
+  align-items: center;
+  margin: 0 auto;
+  padding-left: 15px;
+}
+
+.ingreso {
+  width: 56px;
+  height: 56px;
+  border-radius: 40px;
+  margin-right: 37px;
+}
+
+.persona {
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+button {
+  border-radius: 5px;
+  width: 55px;
+  height: 25px;
+  cursor: pointer;
+}
