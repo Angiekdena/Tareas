@@ -19,6 +19,11 @@
                     <p id="textoMostrar">Escoge un usuario</p>
                     <br>
                     <span id="password"></span>
+                    <div id="opciones" hidden>
+                        <button id="saldoInicial" type="button" onclick="escogerOpcion(1)">Consultar Saldo</button>
+                        <button id="ingresarMonto" type="button" onclick="escogerOpcion(2)">Ingresar Monto</button>
+                        <button id="retirarMonto" type="button" onclick="escogerOpcion(3)">Retirar Monto</button>
+                    </div>
                 </div>
                 <div class="usuario">
 
@@ -33,23 +38,22 @@
             <div class="teclado">
                 <div class="numeros">
                     <div class="grid">
-                        <div onclick="recibePassword(1)">1</div>
-                        <div onclick="recibePassword(2)">2</div>
-                        <div onclick="recibePassword(3)">3</div>
-                        <div onclick="recibePassword()" class="rojo">CLEAR</div>
-                        <div onclick="recibePassword(4)">4</div>
-                        <div onclick="recibePassword(5)">5</div>
-                        <div onclick="recibePassword(6)">6</div>
-                        <div onclick="recibePassword()" class="amarillo">CANCEL</div>
-                        <div onclick="recibePassword(7)">7</div>
-                        <div onclick="recibePassword(8)">8</div>
-                        <div onclick="recibePassword(9)">9</div>
-                        <div onclick="validarPassword()" class="verde">ENTER</div>
-                        <div onclick="recibePassword()">
-                            &#12296</div>
-                        <div onclick="recibePassword(0)">0</div>
-                        <div onclick="recibePassword()">&#12297</div>
-                        <div onclick="recibePassword()"></div>
+                        <div onclick="recibeNumero(1)">1</div>
+                        <div onclick="recibeNumero(2)">2</div>
+                        <div onclick="recibeNumero(3)">3</div>
+                        <div onclick="borrar()" class="amarillo">CLEAR</div>
+                        <div onclick="recibeNumero(4)">4</div>
+                        <div onclick="recibeNumero(5)">5</div>
+                        <div onclick="recibeNumero(6)">6</div>
+                        <div onclick="cancelar()" class="rojo">CANCEL</div>
+                        <div onclick="recibeNumero(7)">7</div>
+                        <div onclick="recibeNumero(8)">8</div>
+                        <div onclick="recibeNumero(9)">9</div>
+                        <div onclick="enter()" class="verde">ENTER</div>
+                        <div onclick="recibeNumero()">&#12296</div>
+                        <div onclick="recibeNumero(0)">0</div>
+                        <div onclick="recibeNumero()">&#12297</div>
+                        <div onclick="volver()" class="return">RETURN</div>
                     </div>
                 </div>
             </div>
