@@ -6,7 +6,7 @@ let datos = [
 
 let passwordDigitado = "";
 let cuentaSeleccionada = "";
-let opcionSeleccionada = 0;
+let opcionSeleccionada = 0;//Opcion 1 es password, opcion 2 - consultar saldo, opcion 3 - recibir monto, opcion 4 - retirar monto.
 
 function escogerUsuario(usuario) {
   cambiarTextoPrincipal(
@@ -86,7 +86,6 @@ function enter() {
 function escogerOpcion(seleccion) {
   let usuario = datos.find((user) => user.nombre === cuentaSeleccionada);
 
-  console.log(escogerOpcion);
   if (seleccion === 1) {
     opcionSeleccionada = 2;
     cambiarTextoPrincipal(
@@ -133,3 +132,23 @@ function cancelar() {
   opcionSeleccionada = 0;
   document.getElementById("opciones").hidden = true;
 }
+
+function borrar() {
+  
+  if(opcionSeleccionada===1){
+    passwordDigitado = passwordDigitado.slice(0,-1);
+    let valor= document.getElementById("password").innerText;
+    valor = valor.slice(0,-1);
+    cambiarTextoPrincipal("password", valor);
+  }else if(opcionSeleccionada===3){
+    let montoIngresado = document.getElementById("password").innerText;
+    montoIngresado = montoIngresado.slice(0,-1);
+    cambiarTextoPrincipal("password", montoIngresado);
+  }else if(opcionSeleccionada===4){
+    let retirarMonto = document.getElementById("password").innerText;
+    retirarMonto = retirarMonto.slice(0,-1);
+    cambiarTextoPrincipal("password", retirarMonto);
+  }
+  
+}
+
