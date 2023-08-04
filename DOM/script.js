@@ -46,13 +46,13 @@ function registrar() {
     alert("Debes ingresar una cantidad valida");
     return false;
   }
-  input.value = '';
+  input.value = "";
 
   let venta = {
     vendedor: vendedorValue,
     producto: productoValue,
     cantidad: cantidad,
-    ventaTotal: valorVenta(productoValue, cantidad)
+    ventaTotal: valorVenta(productoValue, cantidad),
   };
   ventas.push(venta);
   console.log(ventas);
@@ -63,7 +63,6 @@ function registrar() {
 function valorVenta(producto, cantidad) {
   let valorUnitario = 0;
 
- 
   if (producto === "Aqua") {
     valorUnitario = 200;
   } else if (producto === "Emocion") {
@@ -74,50 +73,44 @@ function valorVenta(producto, cantidad) {
     valorUnitario = 150;
   }
 
-
   return valorUnitario * cantidad;
 }
 
-function llenarTabla () {
+function llenarTabla() {
+  let data = "";
 
-    let data ="";
+  for (index = 0; index < ventas.length; index++) {
+    data += `<tr><td>${ventas[index].vendedor}</td><td>${ventas[index].producto}</td><td>${ventas[index].cantidad}</td><td>${ventas[index].ventaTotal}</td></tr>`;
+  }
 
-    for (index=0; index<ventas.length; index++) {
-        data += `<tr><td>${ventas[index].vendedor}</td><td>${ventas[index].producto}</td><td>${ventas[index].cantidad}</td><td>${ventas[index].ventaTotal}</td></tr>`;
-    }
-
-    let tabla = document.getElementById("tabla")
-    tabla.innerHTML = data;
+  let tabla = document.getElementById("tabla");
+  tabla.innerHTML = data;
 }
 
-function empleadoMes(){
-    if(ventas && ventas.length>0){
-
-    
-    let ventasPorVendedor = ventas.reduce(function(acumulado, ventaActual) {
-    if (acumulado[ventaActual.vendedor]) {
+function empleadoMes() {
+  if (ventas && ventas.length > 0) {
+    let ventasPorVendedor = ventas.reduce(function (acumulado, ventaActual) {
+      if (acumulado[ventaActual.vendedor]) {
         acumulado[ventaActual.vendedor] += ventaActual.ventaTotal;
-    } else {
+      } else {
         acumulado[ventaActual.vendedor] = ventaActual.ventaTotal;
-    }
-    return acumulado;
-  }, {});
+      }
+      return acumulado;
+    }, {});
 
-  let ventasArray = Object.keys(ventasPorVendedor).map(function(vendedor) {
-    return {
-      vendedor: vendedor,
-      ventaTotal: ventasPorVendedor[vendedor]
-    };
-  });
-  
-  ventasArray.sort(function(a, b) {
-    return b.ventaTotal - a.ventaTotal;
-  });
-  let resultado = document.getElementById("resultado")
-  resultado.innerHTML = `El vendedor del mes es ${ventasArray[0].vendedor} con un total de ${ventasArray[0].ventaTotal} dolares`;
-} else {
-    alert("No hay informacion para procesar")
+    let ventasArray = Object.keys(ventasPorVendedor).map(function (vendedor) {
+      return {
+        vendedor: vendedor,
+        ventaTotal: ventasPorVendedor[vendedor],
+      };
+    });
+
+    ventasArray.sort(function (a, b) {
+      return b.ventaTotal - a.ventaTotal;
+    });
+    let resultado = document.getElementById("resultado");
+    resultado.innerHTML = `El vendedor del mes es ${ventasArray[0].vendedor} con un total de ${ventasArray[0].ventaTotal} dolares`;
+  } else {
+    alert("No hay informacion para procesar");
+  }
 }
-}
-
-
